@@ -115,6 +115,35 @@ const TRAINER_EXPERIENCES_OPTIONS = [
     { value: "Corporate", label: "Corporate Training" },
 ]
 
+const WORK_EXPERIENCE_OPTIONS = [
+    "UI/UX",
+    "Full Stack Development",
+    "Machine Learning",
+    "Mobile App Development",
+    "Data Science",
+    "Cyber Security",
+    "Cloud Computing",
+    "DevOps Engineering",
+    "Product Management",
+    "Software Engineering",
+    "Web Development", 
+    "Frontend Development",
+    "Backend Development",
+    "Database Administration",
+    "Network Engineering",
+    "Game Development",
+    "Research Intern",
+    "Research Scientist",
+    "Research Analyst",
+    "Research Assistant",
+    "IT Support",
+    "Quality Assurance",
+    "Project Management",
+    "Business Analysis",
+    "Systems Administration",
+    "Technical Writing",
+];
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const DATE_FORMAT = 'DD/MM/YYYY';
@@ -127,6 +156,7 @@ const GENDER_OPTIONS = [
     { label: 'Male', value: 'Male' },
     { label: 'Female', value: 'Female' },
     { label: 'Other', value: 'Other' },
+    { label: 'Prefer Not to Say', value: 'Prefer Not to Say' },
 ];
 
 const LANGUAGE_OPTIONS = [
@@ -144,11 +174,14 @@ const LANGUAGE_OPTIONS = [
     { label: 'Urdu', value: 'Urdu' },
 ];
 
+const MONTHS_OPTIONS_NEW = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+const YEAR_DROPDOWN_OPTIONS = [...Array(15).keys()].map(i => `${new Date().getFullYear() - i}`).map(i => ({ label: i, value: i }));
+
 const ORG_URL_OPTIONS = [
     { label: 'bCAP', value: 'bcap' },
     { label: 'Gen AI', value: 'genai' },
     { label: 'Placement Prep', value: 'placementPrep' },
     { label: 'Assessments', value: 'assessments' },
 ];
-
-export { VISIBILITY, TECHINCAL_SKILL_SET, SOFT_SKILL_SET, DIFFICULTY_VS_NAME, COURSE_CATALOG_CONTENT_TYPE, EMAIL_REGEX, DATE_FORMAT, DATE_TIME_FORMAT, TIME_FROMAT, TRAINER_EXPERIENCES_OPTIONS, LOGIN_REDIRECT_STORAGE_KEY, GENDER_OPTIONS, LANGUAGE_OPTIONS, ORG_URL_OPTIONS };
+export { VISIBILITY, TECHINCAL_SKILL_SET, SOFT_SKILL_SET, DIFFICULTY_VS_NAME, COURSE_CATALOG_CONTENT_TYPE, EMAIL_REGEX, DATE_FORMAT, DATE_TIME_FORMAT, TIME_FROMAT, TRAINER_EXPERIENCES_OPTIONS, LOGIN_REDIRECT_STORAGE_KEY, GENDER_OPTIONS, LANGUAGE_OPTIONS, WORK_EXPERIENCE_OPTIONS, YEAR_DROPDOWN_OPTIONS, MONTHS_OPTIONS_NEW, ORG_URL_OPTIONS };
