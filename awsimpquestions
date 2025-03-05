@@ -1,0 +1,270 @@
+# 6
+A company captures clickstream data from multiple websites and analyzes it using batch processing. The data is loaded nightly into Amazon Redshift and is consumed by business analysts. The company wants to move towards near-real-time data processing for timely insights. The solution should process the streaming data with minimal effort and operational overhead.  
+Which combination of AWS services are MOST cost-effective for this solution? (Choose two.)  
+
+- A. Amazon EC2
+- B. AWS Lambda
+- C. Amazon Kinesis Data Streams
+- D. Amazon Kinesis Data Firehose
+- E. Amazon Kinesis Data Analytics
+# 7
+A government entity is conducting a population and housing census in the city. Each household information uploaded on their online portal is stored in encrypted files in Amazon S3. The government assigned its Solutions Architect to set compliance policies that verify data containing personally identifiable information (PII) in a manner that meets their compliance standards. They should also be alerted if there are potential policy violations with the privacy of their S3 buckets.
+
+Which of the following should the Architect implement to satisfy this requirement?
+
+- Set up and configure Amazon Kendra to monitor malicious activity on their Amazon S3 data
+- Set up and configure Amazon Macie to monitor their Amazon S3 data.
+- Set up and configure Amazon Fraud Detector to send out alert notifications whenever a security violation is detected on their Amazon S3 data.
+- Set up and configure Amazon Polly to scan for usage patterns on Amazon S3 data
+# 8
+A company is using Amazon S3 to store frequently accessed data. When an object is created or deleted, the S3 bucket will send an event notification to the Amazon SQS queue. A solutions architect needs to create a solution that will notify the development and operations team about the created or deleted objects.
+
+Which of the following would satisfy this requirement?
+
+- Set up an Amazon SNS topic and configure two Amazon SQS queues to poll the SNS topic. Grant Amazon S3 permission to send notifications to Amazon SNS and update the bucket to use the new SNS topic.
+- Create an Amazon SNS topic and configure two Amazon SQS queues to subscribe to the topic. Grant Amazon S3 permission to send notifications to Amazon SNS and update the bucket to use the new SNS topic.
+- Set up another Amazon SQS queue for the other team. Grant Amazon S3 permission to send a notification to the second SQS queue.
+- Create a new Amazon SNS FIFO topic for the other team. Grant Amazon S3 permission to send the notification to the second SNS topic.
+
+# 9
+A Solutions Architect is designing a highly available relational database solution to mitigate the risk of a multi-region failure. The database must meet a Recovery Point Objective (RPO) of 1 second and a Recovery Time Objective (RTO) of less than 1 minute. The architect needs a disaster recovery plan that enables automatic cross-region replication with minimal data loss and rapid recovery in the event of a failure.
+
+Which AWS service best fulfills this requirement?
+
+- Amazon RDS for PostgreSQL with cross-region read replicas
+- Amazon Aurora Global Database
+- Amazon Timestream
+- Amazon DynamoDB Global table
+# 10
+An application consists of multiple EC2 instances in private subnets in different availability zones. The application uses a single NAT Gateway for downloading software patches from the Internet to the instances. There is a requirement to protect the application from a single point of failure when the NAT Gateway encounters a failure or if its availability zone goes down.
+
+How should the Solutions Architect redesign the architecture to be more highly available and cost-effective?
+- Create three NAT Gateways in each availability zone. Configure the route table in each private subnet to ensure that instances use the NAT Gateway in the same availability zone.
+- Create two NAT Gateways in each availability zone. Configure the route table in each public subnet to ensure that instances use the NAT Gateway in the same availability zone.
+- Create a NAT Gateway in each availability zone. Configure the route table in each public subnet to ensure that instances use the NAT Gateway in the same availability zone.
+- Create a NAT Gateway in each availability zone. Configure the route table in each private subnet to ensure that instances use the NAT Gateway in the same availability zone
+# 11
+A Solutions Architect identified a series of DDoS attacks while monitoring the VPC. The Architect needs to fortify the current cloud infrastructure to protect the data of the clients.
+
+Which of the following is the most suitable solution to mitigate these kinds of attacks?
+
+- Use AWS Shield Advanced to detect and mitigate DDoS attacks.
+- A combination of Security Groups and Network Access Control Lists to only allow authorized traffic to access your VPC.
+- Using the AWS Firewall Manager, set up a security layer that will prevent SYN floods, UDP reflection attacks, and other DDoS attacks.
+- Set up a web application firewall using AWS WAF to filter, monitor, and block HTTP traffic.
+# 12
+A healthcare organization wants to build a system that can predict drug prescription abuse. They will gather real-time data from multiple sources, which includes Personally Identifiable Information (PII). It’s crucial that this sensitive information is anonymized prior to landing in a NoSQL database for further processing.
+
+Which solution would meet the requirements?
+
+- Create a data lake in Amazon S3 and use it as the primary storage for patient health data. Use an S3 trigger to run a Lambda function that performs anonymization. Send the anonymized data to Amazon DynamoDB
+- Stream the data in an Amazon DynamoDB table. Enable DynamoDB Streams, and configure a function that performs anonymization on newly written items.
+- Deploy an Amazon Data Firehose stream to capture and transform the streaming data. Deliver the anonymized data to Amazon Redshift for analysis.
+- Ingest real-time data using Amazon Kinesis Data Stream. Use a Lambda function to anonymize the PII, then store it in Amazon DynamoDB.
+# 13
+A company has a cloud architecture that is composed of Linux and Windows EC2 instances that process high volumes of financial data 24 hours a day, 7 days a week. To ensure high availability of the systems, the Solutions Architect needs to create a solution that allows them to monitor the memory and disk utilization metrics of all the instances.
+
+Which of the following is the most suitable monitoring solution to implement?
+
+- Use the default CloudWatch configuration to EC2 instances where the memory and disk utilization metrics are already available. Install the AWS Systems Manager (SSM) Agent to all the EC2 instances.
+- Install the CloudWatch agent to all the EC2 instances that gather the memory and disk utilization data. View the custom metrics in the Amazon CloudWatch console.
+- Enable the Enhanced Monitoring option in EC2 and install CloudWatch agent to all the EC2 instances to be able to view the memory and disk utilization in the CloudWatch dashboard.
+- Use Amazon Inspector and install the Inspector agent to all EC2 instances.
+
+# 14 important
+A startup is using Amazon RDS to store data from a web application. Most of the time, the application has low user activity but it receives bursts of traffic within seconds whenever there is a new product announcement. The Solutions Architect needs to create a solution that will allow users around the globe to access the data using an API.
+
+What should the Solutions Architect do meet the above requirement?
+
+- Create an API using Amazon API Gateway and use Amazon Elastic Beanstalk with Auto Scaling to handle the bursts of traffic in seconds.
+- Create an API using Amazon API Gateway and use AWS Lambda to handle the bursts of traffic in seconds.
+- Create an API using Amazon API Gateway and use the Amazon ECS cluster with Service Auto Scaling to handle the bursts of traffic in seconds.
+- Create an API using Amazon API Gateway and use an Auto Scaling group of Amazon EC2 instances to handle the bursts of traffic in seconds.
+# 15
+A government agency plans to store confidential tax documents on AWS. Due to the sensitive information in the files, the Solutions Architect must restrict the data access requests made to the storage solution to a specific Amazon VPC only. The solution should also prevent the files from being deleted or overwritten to meet the regulatory requirement of having a write-once-read-many (WORM) storage model.
+
+Which combination of the following options should the Architect implement? (Select TWO.)
+
+- Store the tax documents in the Amazon S3 Glacier Instant Retrieval storage class to restrict fast data retrieval to a particular Amazon VPC of your choice.
+- Create a new Amazon S3 bucket with the S3 Object Lock feature enabled. Store the documents in the bucket and set the Legal Hold option for object retention.
+- Configure an Amazon S3 Access Point for the S3 bucket to restrict data access to a particular Amazon VPC only.
+- Enable Object Lock but disable Object Versioning on the new Amazon S3 bucket to comply with the write-once-read-many (WORM) storage model requirement.
+- Set up a new Amazon S3 bucket to store the tax documents and integrate it with AWS Network Firewall. Configure the Network Firewall to only accept data access requests from a specific Amazon VPC.
+# 16
+
+A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company's security team needs a single sign-on (SSO) solution across all the company's accounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory.  
+Which solution will meet these requirements?
+
+- A. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a one-way forest trust or a one-way domain trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.
+- B. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a two-way forest trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory. Most Voted
+- C. Use AWS Directory Service. Create a two-way trust relationship with the company's self-managed Microsoft Active Directory.
+- D. Deploy an identity provider (IdP) on premises. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console.
+
+Tricky question!!! forget one-way or two-way. In this scenario, AWS applications (Amazon Chime, Amazon Connect, Amazon QuickSight, AWS Single Sign-On, Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, AWS Client VPN, AWS Management Console, and AWS Transfer Family) need to be able to look up objects from the on-premises domain in order for them to function. This tells you that authentication needs to flow both ways. This scenario requires a two-way trust between the on-premises and AWS Managed Microsoft AD domains. It is a requirement of the application Scenario 2: https://aws.amazon.com/es/blogs/security/everything-you-wanted-to-know-about-trusts-with-aws-managed-microsoft-ad/
+
+# 17
+
+A company has several web applications with users all around the world. Each application is hosted in an Auto Scaling group of EC2 instances in multiple AZs behind an Application Load Balancer (ALB). All applications have their own fully qualified domain name. For added security, the applications must use a publicly trusted SSL certificate.
+
+Which solution will meet this requirement with the LEAST operational overhead?
+
+- Issue an SSL/TLS certificate using the AWS Certificate Manager Private Certificate Authority. Associate the new certificate on the HTTPS listener of the ALBs.
+- Launch a self-hosted certificate authority (CA) using the Let’s Encrypt tool in an Amazon EC2 instance. Utilize the built-in ISRG Root X1 trusted root CA certificate. Generate a new SSL/TLS certificate using the `certbot` CLI utility. Associate the new certificate on the HTTPS listener of the ALBs.
+- Use the AWS Certificate Manager (ACM) to generate a public SSL/TLS certificate. Associate the new SSL/TLS certificate on the HTTPS listener of the ALBs.
+- Use OpenSSL to generate a self-signed certificate. Import the SSL/TLS certificate to the AWS Certificate Manager (ACM) and associate it with the HTTPS listener of the ALBs
+
+# 18 - 33 in examtopics
+
+A company runs an online marketplace web application on AWS. The application serves hundreds of thousands of users during peak hours. The company needs a scalable, near-real-time solution to share the details of millions of financial transactions with several other internal applications. Transactions also need to be processed to remove sensitive data before being stored in a document database for low-latency retrieval.  
+What should a solutions architect recommend to meet these requirements?
+
+- A. Store the transactions data into Amazon DynamoDB. Set up a rule in DynamoDB to remove sensitive data from every transaction upon write. Use DynamoDB Streams to share the transactions data with other applications.
+- B. Stream the transactions data into Amazon Kinesis Data Firehose to store data in Amazon DynamoDB and Amazon S3. Use AWS Lambda integration with Kinesis Data Firehose to remove sensitive data. Other applications can consume the data stored in Amazon S3.
+- C. Stream the transactions data into Amazon Kinesis Data Streams. Use AWS Lambda integration to remove sensitive data from every transaction and then store the transactions data in Amazon DynamoDB. Other applications can consume the transactions data off the Kinesis data stream. Most Voted
+- D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to process every file and remove sensitive data before updating the files in Amazon S3. The Lambda function then stores the data in Amazon DynamoDB. Other applications can consume transaction files stored in Amazon S3.
+
+I would go for C. The tricky phrase is "near-real-time solution", pointing to Firehouse, but it can't send data to DynamoDB, so it leaves us with C as best option. Kinesis Data Firehose currently supports Amazon S3, Amazon Redshift, Amazon OpenSearch Service, Splunk, Datadog, NewRelic, Dynatrace, Sumologic, LogicMonitor, MongoDB, and HTTP End Point as destinations.
+
+# 19 - aws kineses question range 60
+A company hosts more than 300 global websites and applications. The company requires a platform to analyze more than 30 TB of clickstream data each day.  
+What should a solutions architect do to transmit and process the clickstream data?
+
+- A. Design an AWS Data Pipeline to archive the data to an Amazon S3 bucket and run an Amazon EMR cluster with the data to generate analytics.
+- B. Create an Auto Scaling group of Amazon EC2 instances to process the data and send it to an Amazon S3 data lake for Amazon Redshift to use for analysis.
+- C. Cache the data to Amazon CloudFront. Store the data in an Amazon S3 bucket. When an object is added to the S3 bucket. run an AWS Lambda function to process the data for analysis.
+- D. Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis. Most Voted
+# 20 - timed test 4
+
+|A company has a web-based order processing system that is currently using a standard queue in Amazon SQS. The IT Manager noticed that there are a lot of cases where an order was processed twice. This issue has caused a lot of trouble in processing and made the customers very unhappy. The manager has asked you to ensure that this issue will not recur.<br><br>What can you do to prevent this from happening again in the future? (Select TWO.)<br><br>[(view)](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/#)
+|-  Alter the retention period in Amazon SQS.<br>-  Alter the visibility timeout of SQS.<br>-  Replace Amazon SQS and instead, use AWS Step Functions.<br>-  Change the message size in SQS.<br>-  Use an Amazon SQS FIFO Queue instead.<br><br>**Amazon SQS FIFO (First-In-First-Out) Queues** have all the capabilities of the standard queue with additional capabilities designed to enhance messaging between applications when the order of operations and events is critical or where **duplicates can't be tolerated**, for example:<br><br>- Ensure that user-entered commands are executed in the right order.  <br>- Display the correct product price by sending price modifications in the right order.  <br>- Prevent a student from enrolling in a course before registering for an account.<br><br>![](https://media.tutorialsdojo.com/public/2020-03-09_11-14-42-e24d31f607e373f989c2829e2805b01e.png)<br><br>**AWS Step Functions** provides useful guarantees around task assignments. It ensures that a task is never duplicated and is assigned only once. Thus, even though you may have multiple workers for a particular activity type (or a number of instances of a decider), AWS Step Functions will give a specific task to only one worker (or one decider instance). Additionally, AWS Step Functions keeps at most one decision task outstanding at a time for workflow execution. Thus, you can run multiple decider instances without worrying about two instances operating on the same execution simultaneously. These facilities enable you to coordinate your workflow without worrying about duplicate, lost, or conflicting tasks.<br><br>The main issue in this scenario is that the order management system produces duplicate orders at times. Since the company is using SQS, there is a possibility that a message can have a duplicate in case an EC2 instance fails to delete the already processed message. To prevent this issue from happening, you have to use the AWS Step Functions instead of SQS.<br><br>Therefore, the correct answers are:<br><br>**- Replace Amazon SQS and instead, use AWS Step Functions.**<br><br>**- Use an Amazon SQS FIFO Queue instead.**<br><br>**Altering the retention period in Amazon SQS** is incorrect because the retention period simply specifies if the Amazon SQS should delete the messages that have been in a queue for a certain period of time.<br><br>**Altering the visibility timeout of SQS** is incorrect because for standard queues, the visibility timeout isn't a guarantee against receiving a message twice. To avoid duplicate SQS messages, it is better to design your applications to be _idempotent_ (they should not be affected adversely when processing the same message more than once).<br><br>**Changing the message size in SQS** is incorrect because this is not related at all in this scenario
+
+# 21 - timed test 4
+
+|A Solutions Architect is working for a large global media company with multiple office locations all around the world. The Architect is instructed to build a system to distribute training videos to all employees.<br><br>Using CloudFront, what method would be used to serve content that is stored in S3, but not publicly accessible from S3 directly?<br><br>[(view)](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/#)|1|0|1|00:01:00||
+|---|---|---|---|---|---|
+|-  Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI.<br>-  Create an Identity and Access Management (IAM) user for CloudFront and grant access to the objects in your S3 bucket to that IAM user.<br>-  Create an S3 bucket policy that lists the CloudFront distribution ID as the principal and the target bucket as the Amazon Resource Name (ARN).<br>-  Create a web ACL in AWS WAF to block any public S3 access and attach it to the Amazon CloudFront distribution.<br><br>When you create or update a distribution in CloudFront, you can add an origin access identity (OAI) and automatically update the bucket policy to give the origin access identity permission to access your bucket. Alternatively, you can choose to manually change the bucket policy or change ACLs, which control permissions on individual objects in your bucket.<br><br>![](https://media.tutorialsdojo.com/4-v-2.png)<br><br>You can update the Amazon S3 bucket policy using either the AWS Management Console or the Amazon S3 API:<br><br>- Grant the CloudFront origin access identity the applicable permissions on the bucket.<br><br>- Deny access to anyone that you don't want to have access using Amazon S3 URLs.<br><br>Hence, the correct answer is: **Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI.**<br><br>The option that says: **Create an Identity and Access Management (IAM) user for CloudFront and grant access to the objects in your S3 bucket to that IAM user** is incorrect because you cannot directly create an IAM User for a specific Amazon CloudFront distribution. You have to use an origin access identity (OAI) instead.<br><br>The option that says: **Create an S3 bucket policy that lists the CloudFront distribution ID as the principal and the target bucket as the Amazon Resource Name (ARN)** is incorrect because setting up an Amazon S3 bucket policy won't suffice. You have to first create an OAI in CloudFront and use that OAI as an authorized user in your Amazon S3 bucket.<br><br>The option that says: **Create a web ACL in AWS WAF to block any public S3 access and attach it to the Amazon CloudFront distribution** is incorrect because AWS WAF is primarily used to protect your applications from common web vulnerabilities and not to ensure exclusive access to CloudFront.
+
+# 22 review mode 5 - important storage gateway
+
+An organization plans to run an application in a dedicated physical server that doesn’t use virtualization. The application data will be stored in a storage solution that uses an NFS protocol. To prevent data loss, you need to use a durable cloud storage service to store a copy of your data.
+
+Which of the following is the most suitable solution to meet the requirement?
+
+- Use AWS Storage Gateway with a gateway VM appliance for your compute resources. Configure File Gateway to store the application data and backup data.
+- Use an AWS Storage Gateway hardware appliance for your compute resources. Configure File Gateway to store the application data and create an Amazon S3 bucket to store a backup of your data.
+- Use an AWS Storage Gateway hardware appliance for your compute resources. Configure Volume Gateway to store the application data and backup data.
+- Use an AWS Storage Gateway hardware appliance for your compute resources. Configure Volume Gateway to store the application data and create an Amazon S3 bucket to store a backup of your data.
+
+Incorrect
+
+**AWS Storage Gateway** is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage by linking it to S3. Storage Gateway provides 3 types of storage solutions for your on-premises applications: file, volume, and tape gateways. The AWS Storage Gateway Hardware Appliance is a physical, standalone, validated server configuration for on-premises deployments.
+
+![How File Gateway works](https://media.tutorialsdojo.com/File-Gateway-How-it-Works.6a5ce3c54688864e5b951df9cb8732fc4f2926b4.png "How File Gateway works")
+
+The AWS Storage Gateway Hardware Appliance is a physical hardware appliance with the Storage Gateway software preinstalled on a validated server configuration. The hardware appliance is a high-performance 1U server that you can deploy in your data center or on-premises inside your corporate firewall. When you buy and activate your hardware appliance, the activation process associates your hardware appliance with your AWS account. After activation, your hardware appliance appears in the console as a gateway on the _Hardware_ page. You can configure your hardware appliance as a file gateway, tape gateway, or volume gateway type. The procedure that you use to deploy and activate these gateway types on a hardware appliance is the same as on a virtual platform.
+
+Since the company needs to run a dedicated physical appliance, you can use an AWS Storage Gateway Hardware Appliance. It comes pre-loaded with Storage Gateway software and provides all the required resources to create a file gateway. A file gateway can be configured to store and retrieve objects in Amazon S3 using the protocols NFS and SMB.
+
+Hence, the correct answer in this scenario is: **Use an AWS Storage Gateway hardware appliance for your compute resources. Configure File Gateway to store the application data and create an Amazon S3 bucket to store a backup of your data**.
+
+The option that says: **Use AWS Storage Gateway with a gateway VM appliance for your compute resources. Configure File Gateway to store the application data and backup data** is incorrect because as per the scenario, the company needs to use an on-premises hardware appliance and not just a Virtual Machine (VM).
+
+The options that say: **Use an AWS Storage Gateway hardware appliance for your compute resources. Configure Volume Gateway to store the application data and backup data** and **Use an AWS Storage Gateway hardware appliance for your compute resources. Configure Volume Gateway to store the application data and create an Amazon S3 bucket to store a backup of your data** are both incorrect. As per the scenario, the requirement is a file system that uses an NFS protocol and not iSCSI devices. Among the AWS Storage Gateway storage solutions, only file gateway can store and retrieve objects in Amazon S3 using the protocols NFS and SMB.
+
+# 23 - PrivateLink
+
+A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's VPC. According to the company’s security team, the connectivity must be private and must be restricted to the target service. The connection must be initiated only from the company’s VPC.  
+Which solution will mast these requirements?
+
+- A. Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.
+- B. Ask the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.
+- C. Create a NAT gateway in a public subnet of the company’s VPUpdate the route table to connect to the target service.
+- D. Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.
+
+# 24 -  timed mode 3 cloudfront
+
+A company has clients all across the globe that access product files stored in several S3 buckets, which are behind each of their own CloudFront web distributions. They currently want to deliver their content to a specific client, and they need to make sure that only that client can access the data. Currently, all of their clients can access their S3 buckets directly using an S3 URL or through their CloudFront distribution. The Solutions Architect must serve the private content via CloudFront only, to secure the distribution of files.
+
+Which combination of actions should the Architect implement to meet the above requirements? (Select TWO.)
+
+- Create a custom CloudFront function to check and ensure that only their clients can access the files.
+- Enable the Origin Shield feature of the Amazon CloudFront distribution to protect the files from unauthorized access.
+- Use S3 pre-signed URLs to ensure that only their client can access the files. Remove permission to use Amazon S3 URLs to read the files for anyone else.
+- Require the users to access the private content by using special CloudFront signed URLs or signed cookies.
+- Restrict access to files in the origin by creating an origin access identity (OAI) and give it permission to read the files in the bucket.
+# 25
+
+A solutions architect is writing an AWS Lambda function that will process encrypted documents from an Amazon FSx for NetApp ONTAP file system. The documents are protected by an AWS KMS customer key. After processing the documents, the Lambda function will store the results in an S3 bucket with an Amazon S3 Glacier Flexible Retrieval storage class. The solutions architect must ensure that the files can be decrypted by the Lambda function.
+
+Which action accomplishes the requirement?
+
+- Attach the `kms:decrypt` permission to the Lambda function’s resource policy. Add a statement to the AWS KMS key’s policy that grants the function’s resource policy ARN the `kms:decrypt` permission.
+- Attach the `kms:decrypt` permission to the Lambda function’s execution role. Add a statement to the AWS KMS key’s policy that grants the function’s execution role the `kms:decrypt` permission.
+- Attach the `kms:decrypt` permission to the Lambda function’s resource policy. Add a statement to the AWS KMS key’s policy that grants the function’s execution role the `kms:decrypt` permission.
+- Attach the `kms:decrypt` permission to the Lambda function’s execution role. Add a statement to the AWS KMS key’s policy that grants the function’s ARN the `kms:decrypt` permission.
+
+# 26
+An application runs on Amazon EC2 instances in private subnets. The application needs to access an Amazon DynamoDB table.  
+  
+What is the MOST secure way to access the table while ensuring that the traffic does not leave the AWS network?
+
+- A. Use a VPC endpoint for DynamoDB.
+- B. Use a NAT gateway in a public subnet.
+- C. Use a NAT instance in a private subnet.
+- D. Use the internet gateway attached to the VPC.
+# 27 - examtopics 188
+A company uses Amazon S3 as its data lake. The company has a new partner that must use SFTP to upload data files. A solutions architect needs to implement a highly available SFTP solution that minimizes operational overhead.  
+  
+Which solution will meet these requirements?
+
+- A. Use AWS Transfer Family to configure an SFTP-enabled server with a publicly accessible endpoint. Choose the S3 data lake as the destination.
+- B. Use Amazon S3 File Gateway as an SFTP server. Expose the S3 File Gateway endpoint URL to the new partner. Share the S3 File Gateway endpoint with the new partner.
+- C. Launch an Amazon EC2 instance in a private subnet in a VPInstruct the new partner to upload files to the EC2 instance by using a VPN. Run a cron job script, on the EC2 instance to upload files to the S3 data lake.
+- D. Launch Amazon EC2 instances in a private subnet in a VPC. Place a Network Load Balancer (NLB) in front of the EC2 instances. Create an SFTP listener port for the NLB. Share the NLB hostname with the new partner. Run a cron job script on the EC2 instances to upload files to the S3 data lake.
+# 28
+
+A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions architect implements an internet-facing Application Load Balancer (ALB) and specifies the EC2 instances as the target group. However, the internet traffic is not reaching the EC2 instances.  
+  
+How should the solutions architect reconfigure the architecture to resolve this issue?
+
+- A. Replace the ALB with a Network Load Balancer. Configure a NAT gateway in a public subnet to allow internet traffic.
+- B. Move the EC2 instances to public subnets. Add a rule to the EC2 instances’ security groups to allow outbound traffic to 0.0.0.0/0.
+- C. Update the route tables for the EC2 instances’ subnets to send 0.0.0.0/0 traffic through the internet gateway route. Add a rule to the EC2 instances’ security groups to allow outbound traffic to 0.0.0.0/0.
+- D. Create public subnets in each Availability Zone. Associate the public subnets with the ALB. Update the route tables for the public subnets with a route to the private subnets. Most Voted
+# 29 - important ports question timed mode 3
+
+|A company hosted a web application on a Linux Amazon EC2 instance in the public subnet that uses a non-default network ACL. The instance uses a default security group and has an attached Elastic IP address. The network ACL is configured to block all inbound and outbound traffic. The Solutions Architect must allow incoming traffic on port 443 to access the application from any source.<br><br>Which combination of steps will accomplish this requirement? (Select TWO.)<br><br>[
+|-  In the Security Group, add a new rule to allow TCP connection on port 443 from source `0.0.0.0/0`<br>-  In the Network ACL, update the rule to allow both inbound and outbound TCP connection on port 443 from source `0.0.0.0/0` and to destination `0.0.0.0/0`<br>-  In the Security Group, create a new rule to allow TCP connection on port 443 to destination `0.0.0.0/0`<br>-  In the Network ACL, update the rule to allow outbound TCP connection on port `32768 - 65535` to destination `0.0.0.0/0`<br>-  In the Network ACL, update the rule to allow inbound TCP connection on port 443 from source `0.0.0.0/0` and outbound TCP connection on port `32768 - 65535` to destination `0.0.0.0/0`<br><br>In order to connect to a service running on an instance, you need to make sure that both inbound traffic on the port that the service is listening on and outbound traffic from ephemeral ports are allowed in the associated network ACL. When a client connects to a server, a random port is generated (like 1024-65535) from the ephemeral port range with this becoming the client's source port.<br><br>The designated ephemeral port then becomes the destination port for return traffic from the service, so outbound traffic from the ephemeral port must be allowed in the network ACL. By default, network ACLs allow all inbound and outbound traffic. If your network ACL is more restrictive, then you need to explicitly allow traffic from the ephemeral port range.<br><br>![](https://media.tutorialsdojo.com/Network_ACL_Ephemeral_Ports.png)<br><br>The client that initiates the request chooses the ephemeral port range. The range varies depending on the client's operating system.<br><br>- Many Linux kernels (including the Amazon Linux kernel) use ports 32768-61000.<br><br>- Requests originating from Elastic Load Balancing use ports 1024-65535.<br><br>- Windows operating systems through Windows Server 2003 use ports 1025-5000.<br><br>- Windows Server 2008 and later versions use ports 49152-65535.<br><br>- A NAT gateway uses ports 1024-65535.<br><br>- AWS Lambda functions use ports 1024-65535.<br><br>For example, if a request comes into a web server in your VPC from a Windows 10 client on the Internet, your network ACL must have an outbound rule to enable traffic destined for ports 49152 - 65535. If an instance in your VPC is the client initiating a request, your network ACL must have an inbound rule to enable traffic destined for the ephemeral ports specific to the type of instance (Amazon Linux, Windows Server 2008, and so on).<br><br>In this scenario, you only need to allow the incoming traffic on port 443. Since security groups are stateful, you can apply any changes to an incoming rule and it will be automatically applied to the outgoing rule.<br><br>To enable the connection to a service running on an instance, the associated network ACL must allow both inbound traffic on the port that the service is listening on as well as outbound traffic from ephemeral ports. When a client connects to a server, a random port from the ephemeral port range (32768 - 65535) becomes the client's source port. Since the return traffic will use an ephemeral port, outbound traffic must be allowed on these ports to destination 0.0.0.0/0.<br><br>Hence, the correct answers are:<br><br>**- In the Security Group, add a new rule to allow TCP connection on port 443 from source `0.0.0.0/0`.**<br><br>**- In the Network ACL, update the rule to allow inbound TCP connection on port 443 from source `0.0.0.0/0` and outbound TCP connection on port `32768 - 65535` to destination `0.0.0.0/0`.**<br><br>The option that says: **In the Security Group, create a new rule to allow TCP connection on port 443 to destination `0.0.0.0/0`** is incorrect because this step just allows outbound connections from the EC2 instance out to the public Internet, which is unnecessary. Remember that a default security group already includes an outbound rule that allows all outbound traffic.<br><br>The option that says: **In the Network ACL, update the rule to allow both inbound and outbound TCP connection on port 443 from source 0.0.0.0/0 and to destination `0.0.0.0/0`** is incorrect because your network ACL must have an outbound rule to allow ephemeral ports (`32768 - 65535`). These are the specific ports that will be used as the client's source port for the traffic response.<br><br>The option that says: **In the Network ACL, update the rule to allow outbound TCP connection on port `32768 - 65535` to destination `0.0.0.0/0`** is incorrect because this step is just partially right. You still need to add an inbound rule from port 443 and not just the outbound rule for the ephemeral ports (`32768 - 65535`).|
+
+
+# 30 - AWS Elastic Disaster Recovery (AWS DRS)
+
+An e-commerce company plans to optimize its disaster recovery configuration using AWS Cloud to minimize operational disruptions during outages or major system maintenance for its on-premises Microsoft SQL Server-based application. The objective is to achieve a recovery point objective (RPO) of 60 seconds or less and a recovery time objective (RTO) of 1 hour.
+
+Which of the following is the MOST cost-effective solution for this scenario?
+
+- Use Microsoft SQL Server Enterprise with Always On availability groups and set up a multi-site active/active setup between the corporate on-premises application and AWS.
+- Back up SQL Server to AWS Storage Gateway for hybrid storage and fast disaster recovery. Enable fast snapshot restore in Amazon Elastic Block Store (Amazon EBS).
+- Set up a pilot light strategy using AWS Elastic Disaster Recovery (AWS DRS) to replicate the changes of the on-premises application to AWS
+- On AWS, implement a warm standby using Amazon RDS for SQL Server database and configure AWS Database Migration Service (AWS DMS) with change data capture (CDC) to sync the data from the on-premises application
+# 31 - timed mode 6
+An application is hosted in an Auto Scaling group of EC2 instances and a Microsoft SQL Server on Amazon RDS. There is a requirement that all in-flight data between your web servers and RDS should be secured.
+
+Which of the following options is the MOST suitable solution that you should implement? (Select TWO.)
+
+- Configure the security groups of your EC2 instances and RDS to only allow traffic to and from port 443.
+- Force all connections to your DB instance to use SSL by setting the `rds.force_ssl` parameter to true. Once done, reboot your DB instance.
+- Download the Amazon RDS Root CA certificate. Import the certificate to your servers and configure your application to use SSL to encrypt the connection to RDS.
+- Enable the IAM DB authentication in RDS using the AWS Management Console.
+- Specify the TDE option in an RDS option group that is associated with that DB instance to enable transparent data encryption (TDE).
+# 32 - question seems interesting
+A company has a fleet of running Spot EC2 instances behind an Application Load Balancer. The incoming traffic comes from various users across multiple AWS regions, and you would like to have the user’s session shared among the fleet of instances.
+
+A Solutions Architect is required to set up a distributed session management layer that will provide scalable and shared data storage for the user sessions that supports multithreaded performance. The cache layer must also detect any node failures and replace the failed ones automatically.
+
+Which of the following would be the best choice to meet the requirement while still providing sub-millisecond latency for the users?
+
+- AWS ELB sticky sessions
+- Amazon ElastiCache for Redis Global Datastore
+- Amazon RDS database with RDS Proxy
+- Amazon ElastiCache for Memcached with Auto Discovery
